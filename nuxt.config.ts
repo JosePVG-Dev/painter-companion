@@ -6,6 +6,16 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'Paint Like a Wiz',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Paint Like a Wiz - Interactive drawing experience with a magical companion' }
+      ]
+    }
+  },
   vite: {
     plugins: [
       tailwindcss(), 
