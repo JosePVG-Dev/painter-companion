@@ -1,8 +1,6 @@
 import { computed, ref, watch, type Ref } from 'vue'
 import { Powers } from '~/enums/powers'
 
-const basePath = '../../assets/Companion/Sprites/Weapon/'
-
 export function useWeaponSkins(power: Ref<Powers | null>) {
 
   const weaponSkinUrl = computed(() => {
@@ -10,15 +8,15 @@ export function useWeaponSkins(power: Ref<Powers | null>) {
 
     switch (power.value) {
       case Powers.Fire:
-        return new URL(`${basePath}Fire Staff.png`, import.meta.url).href
+        return '/Companion/Sprites/Weapon/Fire Staff.png'
       case Powers.Ice:
-        return new URL(`${basePath}Ice Staff.png`, import.meta.url).href
+        return '/Companion/Sprites/Weapon/Ice Staff.png'
       case Powers.Water:
-        return new URL(`${basePath}Water Staff.png`, import.meta.url).href
+        return '/Companion/Sprites/Weapon/Water Staff.png'
       case Powers.SpiderWeb:
         return null
       case Powers.Leaf:
-        return new URL(`${basePath}Leaf Staff.png`, import.meta.url).href
+        return '/Companion/Sprites/Weapon/Leaf Staff.png'
       default:
         return null
     }

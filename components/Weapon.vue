@@ -1,5 +1,5 @@
 <template>
-  <img src="~/assets/Companion/Sprites/Weapon/Ice Staff.png" :style="{ transform: `rotate(${rotation}deg)` }" />
+  <img src="/Companion/Sprites/Weapon/Ice Staff.png" :style="{ transform: `rotate(${rotation}deg)` }" />
 </template>
 a
 <script setup lang="ts">

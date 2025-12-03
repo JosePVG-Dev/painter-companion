@@ -31,5 +31,5 @@
 </template>
 
 <script setup lang="ts">
-import wizGif from '~/assets/Icon Wiz.gif'; 
+const wizGif = '/Icon Wiz.gif'; 
 </script>

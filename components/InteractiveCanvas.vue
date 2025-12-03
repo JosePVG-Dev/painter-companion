@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted, onUnmounted, defineExpose, watch, computed } from 'vue'
-import frameImageSrc from '~/assets/Canva/Frames/Default.png'
+const frameImageSrc = '/Canva/Frames/Default.png'
 import { useCanvasDimensions } from '~/composables/canvas/useCanvasDimensions'
 import { useMousePosCanva } from '~/composables/canvas/useMousePosCanva'
 import { useBlockPainter } from '~/composables/canvas/useBlockPainter'
