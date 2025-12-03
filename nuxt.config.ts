@@ -16,18 +16,11 @@ export default defineNuxtConfig({
       ]
     }
   },
-  nitro: {
-    preset: 'netlify',
-    prerender: {
-      routes: ['/']
-    }
-  },
-  ssr: false,
+  ssr: false, // SPA puro
   vite: {
     plugins: [
-      tailwindcss(), 
+      tailwindcss(),
     ],
-    
   },
   modules: ['@pinia/nuxt'],
 })
