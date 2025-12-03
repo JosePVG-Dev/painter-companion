@@ -16,6 +16,12 @@ export default defineNuxtConfig({
       ]
     }
   },
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
+  ssr: false,
   vite: {
     plugins: [
       tailwindcss(), 
