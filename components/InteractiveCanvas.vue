@@ -98,6 +98,16 @@ if (!selectedPower.value) return
 
 gridStore.setCell(result.x, result.y, selectedPower.value)
   }
+
+function clearCanvas() {
+  if (!ctx.value || !canvasRef.value) return
+  
+  // Limpiar el canvas visualmente
+  ctx.value.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height)
+  
+  // Limpiar el grid map
+  gridStore.clear()
+}
   
 
 
@@ -157,7 +167,7 @@ onUnmounted(() => {
 
 <template>
   <div class="flex flex-col items-center">
-    <div class="flex gap-3 mb-4 flex-wrap justify-center">
+    <div class="flex gap-3 mb-4 flex-wrap justify-center items-center">
       <button  
         v-for="power in powersList" 
         :key="power" 
@@ -169,6 +179,13 @@ onUnmounted(() => {
         @click="setPower(power)"
       >
         {{ power }}
+      </button>
+      <button
+        type="button"
+        class="btn btn-sm md:btn-md min-w-[100px] md:min-w-[120px] transition-all duration-300 font-semibold bg-red-600 text-white border-red-600 hover:bg-red-700 shadow-lg"
+        @click="clearCanvas"
+      >
+        Clear
       </button>
     </div>
 
