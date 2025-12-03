@@ -156,13 +156,16 @@ onUnmounted(() => {
 
 
 <template>
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+  <div class="flex flex-col items-center">
+    <div class="flex gap-3 mb-4 flex-wrap justify-center">
       <button  
         v-for="power in powersList" 
         :key="power" 
         type="button"
-        class="btn btn-soft btn-primary"
+        class="btn btn-sm md:btn-md capitalize min-w-[100px] md:min-w-[120px] transition-all duration-300 font-semibold"
+        :class="selectedPower === power 
+          ? 'bg-purple-600 text-white border-purple-600 shadow-lg hover:bg-purple-700' 
+          : 'bg-purple-200 text-purple-800 border-purple-300 hover:bg-purple-300 hover:border-purple-400 hover:text-purple-900'"
         @click="setPower(power)"
       >
         {{ power }}

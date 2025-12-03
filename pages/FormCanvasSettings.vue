@@ -62,7 +62,7 @@ const onSubmit = () => {
         required
       />
 
-      <button class="btn btn-neutral mt-6" type="submit">Save</button>
+      <button class="btn bg-purple-600 text-white border-purple-600 hover:bg-purple-700 mt-6 font-semibold" type="submit">Save</button>
     </form>
   </div>
 </template>

@@ -41,34 +41,95 @@ const canvasValue = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 1rem;
-  gap: 1rem;
+  justify-content: flex-start;
+  min-height: calc(100vh - 200px);
+  padding: 1.5rem;
+  gap: 2rem;
+  width: 100%;
 }
 
-/* En pantallas grandes (>= 768px), lado a lado */
+.canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  order: 1;
+}
+
+.companion-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  order: 2;
+}
+
+/* Tablets pequeñas (>= 640px) */
+@media (min-width: 640px) {
+  .parent-wrapper {
+    padding: 2rem;
+    gap: 2.5rem;
+  }
+}
+
+/* Tablets y pantallas medianas (>= 768px) */
 @media (min-width: 768px) {
   .parent-wrapper {
     flex-direction: row;
-    align-items: flex-end;
-  }
-
-  .canvas-wrapper,
-  .companion-wrapper {
-    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
   }
 
   .canvas-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
+    max-width: 60%;
+    order: 1;
   }
 
   .companion-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex: 0 0 auto;
+    max-width: 40%;
+    order: 2;
+    justify-content: center;
+  }
+}
+
+/* Pantallas grandes (>= 1024px) */
+@media (min-width: 1024px) {
+  .parent-wrapper {
+    gap: 4rem;
+    padding: 3rem;
+  }
+
+  .canvas-wrapper {
+    max-width: 65%;
+  }
+
+  .companion-wrapper {
+    max-width: 35%;
+  }
+}
+
+/* Pantallas muy grandes (>= 1280px) */
+@media (min-width: 1280px) {
+  .parent-wrapper {
+    gap: 5rem;
+  }
+}
+
+/* Pantallas muy pequeñas (móviles) */
+@media (max-width: 639px) {
+  .parent-wrapper {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .canvas-wrapper {
+    width: 100%;
+    overflow-x: auto;
   }
 }
 </style>

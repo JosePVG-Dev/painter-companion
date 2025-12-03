@@ -1,26 +1,19 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-950">
     <!-- Header -->
-    <header class="w-full bg-purple-700 text-white shadow-md">
+    <header class="w-full bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 text-white shadow-lg">
       <div class="container mx-auto flex justify-between items-center py-4 px-6">
         
         <!-- Logo o título con GIF a la izquierda -->
-        <h1 class="text-2xl font-bold flex items-center gap-2">
-          <img :src="wizGif" alt="Mago pintando" class="w-32 h-30"/>
+        <h1 class="text-2xl font-bold flex items-center gap-2 drop-shadow-lg">
+          <img :src="wizGif" alt="Painting wizard" class="w-32 h-30"/>
           Paint Like a Wiz
         </h1>
 
         <!-- Botones -->
         <nav class="space-x-4">
-          <NuxtLink to="/" class="btn btn-soft btn-primary">Home</NuxtLink>
-          <NuxtLink to="Canvas" class="btn btn-soft btn-primary">Draw here!</NuxtLink>
-          
-          <template v-if="!auth.isLoggedIn">
-            <NuxtLink to="register" class="btn btn-soft btn-primary">Sign up!</NuxtLink>
-          </template>
-          <template v-else>
-            <button @click="logout" class="btn btn-soft btn-danger">Logout</button>
-          </template>
+          <NuxtLink to="Canvas" class="btn bg-purple-200 text-purple-800 border-purple-300 hover:bg-purple-300 hover:text-purple-900 transition-all duration-300 font-semibold">Draw here!</NuxtLink>
+          <NuxtLink to="about" class="btn bg-purple-200 text-purple-800 border-purple-300 hover:bg-purple-300 hover:text-purple-900 transition-all duration-300 font-semibold">About me</NuxtLink>
         </nav>
       </div>
     </header>
@@ -31,22 +24,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-purple-900 text-gray-300 p-4 text-center">
-      &copy; 2025 Mago Interactivo. Todos los derechos reservados.
+    <footer class="bg-gradient-to-r from-purple-800 via-purple-900 to-indigo-900 text-gray-200 p-4 text-center shadow-lg">
+      &copy; 2025 Paint Like a Wiz. All rights reserved.
     </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from '~/stores/auth';
-import { useRouter } from 'vue-router';
 import wizGif from '~/assets/Icon Wiz.gif'; 
-
-const auth = useAuthStore();
-const router = useRouter();
-
-function logout() {
-  auth.logout();
-  router.push('/login');
-}
 </script>

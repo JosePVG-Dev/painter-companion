@@ -190,14 +190,54 @@ onUnmounted(() => {
 
 
 <template>
-  <canvas
-    ref="canvasCompanionRef"
-    :width="canvasWidth"
-    :height="canvasHeight"
-    :style="{ top: '109px', left: '0px' }"
-  />
+  <div class="companion-container">
+    <canvas
+      ref="canvasCompanionRef"
+      :width="canvasWidth"
+      :height="canvasHeight"
+      class="companion-canvas"
+    />
+  </div>
 </template>
 
 <style scoped>
+.companion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
+.companion-canvas {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .companion-canvas {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .companion-canvas {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+  .companion-canvas {
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
 </style>
